@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="3"
+            android:rowCount="3">
+  <Button
+      style="@style/MyButtonStyle"
+      android:gravity="top|left"
+      android:text="@string/number_seven"/>
+  <Button
+      style="?android:attr/borderlessButtonStyle"
+      android:gravity="top|center"
+      android:text="@string/number_eight"/>
+  <Button
+      style="?android:attr/borderlessButtonStyle"
+      android:gravity="top|right"
+      android:text="@string/number_nine"/>
+  <Button
+      style="?android:attr/borderlessButtonStyle"
+      android:gravity="left|center_horizontal"
+      android:text="@string/number_four"/>
+  <Button
+      style="?android:attr/borderlessButtonStyle"
+      android:gravity="center_horizontal|center_vertical"
+      android:text="@string/number_five"/>
+  <Button
+      style="?android:attr/borderlessButtonStyle"
+      android:gravity="right|center_horizontal"
+      android:text="@string/number_six"/>
+  <Button
+      style="?android:attr/borderlessButtonStyle"
+      android:gravity="left|bottom"
+      android:text="@string/number_one"/>
+  <Button
+      style="?android:attr/borderlessButtonStyle"
+      android:gravity="bottom|center_horizontal"
+      android:text="@string/number_two"/>
+  <Button
+      style="?android:attr/borderlessButtonStyle"
+      android:gravity="right|bottom"
+      android:text="@string/number_three"/>
+
+</GridLayout>
