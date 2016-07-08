@@ -9,8 +9,12 @@
   <string name="number_seven">7</string>
   <string name="number_eight">8</string>
   <string name="number_nine">9</string>
-  <string name="decimal_point"> . </string>
+  <string name="decimal_point">.</string>
   <string name="add_to_stack">push</string>
   <string name="number_zero">0</string>
   <string name="invert_sign">+/-</string>
+  <string name="result_info">Your Answer will show here</string>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

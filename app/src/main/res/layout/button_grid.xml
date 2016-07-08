@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:id="@+id/keypad_grid"
             android:alignmentMode="alignBounds"
             android:rowOrderPreserved="true"
             android:columnOrderPreserved="true"
@@ -20,6 +21,8 @@
       android:layout_row="0"
       android:layout_column="2"
       android:text="@string/number_nine"/>
+
+  <!-- Second row of numbers in the keypad -->
   <Button
       android:layout_row="1"
       android:layout_column="0"
@@ -32,6 +35,8 @@
       android:layout_row="1"
       android:layout_column="2"
       android:text="@string/number_six"/>
+
+  <!-- Last row of numbers -->
   <Button
       android:layout_row="2"
       android:layout_column="0"
@@ -45,6 +50,7 @@
       android:layout_column="2"
       android:text="@string/number_three"/>
 
+  <!-- Operators and special keys -->
   <Button
       android:layout_row="0"
       android:layout_column="3"
