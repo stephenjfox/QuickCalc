@@ -1,25 +1,54 @@
 package com.fox.quickcalc;
 
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = MainActivity.class.getName();
 
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        FrameLayout _frameLayout = (FrameLayout) findViewById(R.id.result_frame_layout);
-        TextView _textView = new TextView(this);
-        _textView.setText("Hello World");
-        _frameLayout.addView(_textView);
+        FragmentManager _fragmentManager = getSupportFragmentManager();
 
-        FrameLayout bottomFrame = (FrameLayout) findViewById(R.id.keypad_frame_layout);
-        TextView _otherText = new TextView(this);
-        _otherText.setText("Bottom view, saying 'hey'");
-        bottomFrame.addView(_otherText);
+        commitFragmentWith(_fragmentManager, R.id.display_frame_layout, new DisplayFragment());
+
+        commitFragmentWith(_fragmentManager, R.id.keypad_frame_layout, new KeyPadFragment());
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Helpers
+    ///////////////////////////////////////////////////////////////////////////
+
+    private void commitFragmentWith( FragmentManager fragmentManager, @IdRes int target_layout, Fragment fragmentToLoad ) {
+        Fragment _fragmentById = fragmentManager.findFragmentById(target_layout);
+
+        Log.d(TAG, "commitFragmentWith: " + getResources().getResourceName(target_layout));
+
+        if ( _fragmentById == null ) {
+            _fragmentById = fragmentToLoad;
+            fragmentManager.beginTransaction()
+                    .add(target_layout, _fragmentById)
+                    .commit();
+        }
+    }
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Interface Implementations
+    ///////////////////////////////////////////////////////////////////////////
+
+    private class MyInteractionListener implements DisplayFragment.InteractionListener {
+        @Override
+        public void textChangedTo( String resultantText ) {
+
+        }
     }
 }
