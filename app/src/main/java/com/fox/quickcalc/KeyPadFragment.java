@@ -49,7 +49,7 @@ public class KeyPadFragment extends Fragment {
     }
 
     ///////////////////////////////////////////////////////////////////////////
-    // Click handling for button in the keypad space
+    // Click handling and listeners
     ///////////////////////////////////////////////////////////////////////////
     public void keyPadNumberClick( View view ) {
         String buttonText = ( (Button) view ).getText().toString();
@@ -58,5 +58,13 @@ public class KeyPadFragment extends Fragment {
                 Toast.makeText(getContext(), "Got a button click with text: " + buttonText, Toast.LENGTH_SHORT).show();
         }
         Log.d(TAG, "keyPadNumberClick() called with: " + "view = [" + view + "]");
+    }
+
+
+    ///////////////////////////////////////////////////////////////////////////
+    // Interfaces for communication with the parent Activity
+    ///////////////////////////////////////////////////////////////////////////
+    public interface InteractionListener {
+
     }
 }
